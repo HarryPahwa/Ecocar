@@ -25,12 +25,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Click here to call the Driver"
-        android:onClick="makeCall"
+
         android:textSize="24dp"
         android:background="#f2a635"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/button"
-        android:padding="8dp"/>
+        android:padding="8dp"
+        android:onClick="sinchCallMake"
+        />
 
 </RelativeLayout>
