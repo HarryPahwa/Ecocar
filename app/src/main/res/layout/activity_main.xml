@@ -8,31 +8,40 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ca.ualberta_ecocar.ecocar.MainActivity"
-    android:background="#f1d3f7">
+    android:background="#259359">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="EcoCar!"
-        android:textColor="#259359"
+        android:textColor="#ffffff"
 
-        android:textSize="24dp"
+        android:textSize="48dp"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Click here to call the Driver"
-
         android:textSize="24dp"
         android:background="#f2a635"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/button"
+        android:id="@+id/callButton"
         android:padding="8dp"
-        android:onClick="sinchCallMake"
         />
-
+    <TextView
+        android:id="@+id/callState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/callButton"
+        android:text="No call made yet"
+        android:textSize="24dp"
+        android:textColor="#FFFFFF"/>
 </RelativeLayout>
