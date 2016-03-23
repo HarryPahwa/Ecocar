@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="EcoCar!"
         android:textColor="#ffffff"
-
+        android:fontFamily="sans-serif"
         android:textSize="48dp"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
@@ -29,6 +29,7 @@
         android:text="Click here to call the Driver"
         android:textSize="24dp"
         android:background="#f2a635"
+        android:fontFamily="sans-serif-medium"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/callButton"
