@@ -8,15 +8,15 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ca.ualberta_ecocar.ecocar.MainActivity"
-    android:background="#259359">
+    android:background="#00695C">
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EcoCar!"
+        android:layout_height="56dp"
+        android:src="@drawable/ecocar_logo"
         android:textColor="#ffffff"
         android:fontFamily="sans-serif"
-        android:textSize="48dp"
+
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -45,4 +45,44 @@
         android:text="No call made yet"
         android:textSize="24dp"
         android:textColor="#FFFFFF"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Driver Activity"
+        android:id="@+id/driverButton"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/callButton"
+        android:layout_marginBottom="52dp"
+        android:background="#f2a635"
+        android:fontFamily="sans-serif-medium"
+        android:padding="8dp"
+        android:onClick="driverActivityLaunch"/>
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="20sp"
+        android:padding="8dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team Activity"
+        android:id="@+id/TeamButton"
+        android:layout_alignBottom="@+id/driverButton"
+        android:layout_toEndOf="@+id/callButton"
+        android:background="#f2a635"
+        android:fontFamily="sans-serif-medium"
+        android:padding="8dp"
+        android:onClick="teamActivityLaunch"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/settingsButton"
+        android:onClick="settingsActivityLaunch"
+        />
 </RelativeLayout>

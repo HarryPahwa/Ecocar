@@ -9,6 +9,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/EcocarLogo"
+        android:src="@drawable/ecocar_logo"
         android:padding="40dp"/>
 </LinearLayout>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Ecocar</string>
+    <string name="back_button_string">&lt;- Back</string>
 </resources>

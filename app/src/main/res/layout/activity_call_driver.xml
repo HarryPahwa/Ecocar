@@ -12,7 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#FF9800"
-            android:src="@drawable/DriverStockPic"
+            android:src="@drawable/driver_stock_pic"
             android:padding="24dp"/>
 
         <Button
@@ -20,9 +20,11 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:textSize="20sp"
-            android:text="<- Back"
+            android:text="@string/back_button_string"
             android:textColor="#FFFFFFFF"
             android:background="?android:attr/selectableItemBackground"
+            android:id="@+id/backButton"
+            android:onClick="backButtonClick"
             />
 
         <TextView
@@ -70,7 +72,7 @@
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/TeamStockPic"
+                    android:src="@drawable/team_stock_pic"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_weight="2.1"
@@ -86,9 +88,10 @@
 
 
             <TextView
+                android:id="@+id/callStatus"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:text="Connected to team"
+                android:text="Awaiting contact from team..."
                 android:textSize="32sp"
                 android:padding="16dp"
                 android:gravity="center"
