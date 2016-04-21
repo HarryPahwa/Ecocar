@@ -12,66 +12,75 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="56dp"
+        android:layout_height="80dp"
         android:src="@drawable/ecocar_logo"
         android:textColor="#ffffff"
         android:fontFamily="sans-serif"
-
+        android:layout_marginTop="40dp"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
 
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Click here to call the Driver"
+        android:text="Choose your role"
+
         android:textSize="24dp"
-        android:background="#f2a635"
         android:fontFamily="sans-serif-medium"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:id="@+id/callButton"
         android:padding="8dp"
-        />
-    <TextView
-        android:id="@+id/callState"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@id/callButton"
-        android:text="No call made yet"
-        android:textSize="24dp"
-        android:textColor="#FFFFFF"/>
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Driver Activity"
+        android:text="VIDEO TESTING - Developer only"
+        android:textSize="16dp"
+        android:background="#f2a635"
+        android:fontFamily="sans-serif-medium"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/videoButton"
+        android:padding="8dp"
+        android:layout_marginTop="48dp"
+        android:onClick="videoActivityLaunch"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="148dp"
+        android:text="I'm the driver"
         android:id="@+id/driverButton"
         android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/callButton"
-        android:layout_marginBottom="52dp"
-        android:background="#f2a635"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="88dp"
+        android:background="@drawable/rounded"
+        android:textSize="24dp"
         android:fontFamily="sans-serif-medium"
         android:padding="8dp"
         android:onClick="driverActivityLaunch"/>
+
+
     <TextClock
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20sp"
         android:padding="8dp"/>
+
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Team Activity"
+        android:layout_height="148dp"
+        android:text="I'm the team"
         android:id="@+id/TeamButton"
         android:layout_alignBottom="@+id/driverButton"
-        android:layout_toEndOf="@+id/callButton"
-        android:background="#f2a635"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/rounded"
+        android:textSize="24dp"
         android:fontFamily="sans-serif-medium"
         android:padding="8dp"
         android:onClick="teamActivityLaunch"/>
@@ -81,8 +90,10 @@
         android:layout_height="wrap_content"
         android:text="Settings"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="false"
         android:id="@+id/settingsButton"
         android:onClick="settingsActivityLaunch"
         />
+
 </RelativeLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00695C">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="20sp"
+        android:text="@string/back_button_string"
+        android:textColor="#FFFFFFFF"
+        android:background="?android:attr/selectableItemBackground"
+        android:id="@+id/backButton"
+        android:onClick="backButtonClick"
+        />
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="20sp"
+        android:padding="8dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:text="Stats"
+            android:textAlignment="center"
+            android:textSize="72dp"
+            android:textColor="#D4E157"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Speed: 20 km/hr"
+                android:textSize="32dp"
+                android:textColor="#D4E157"
+                android:padding="8dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Motor Current: 9 A"
+                android:textSize="32dp"
+                android:padding="8dp"
+                android:textColor="#D4E157"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Fuelcell Voltage: 36 V"
+                android:textSize="32dp"
+                android:textColor="#D4E157"
+                android:padding="8dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Fuelcell Current: 10 A"
+                android:textSize="32dp"
+                android:padding="8dp"
+                android:textColor="#D4E157"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Cell#1 voltage: 7 V"
+                android:textSize="32dp"
+                android:textColor="#D4E157"
+                android:padding="8dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Cell#2 voltage: 8.3 V"
+                android:textSize="32dp"
+                android:padding="8dp"
+                android:textColor="#D4E157"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
