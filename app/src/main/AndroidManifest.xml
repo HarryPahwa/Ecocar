@@ -78,9 +78,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".CallScreenActivity"/>
-        <activity android:name=".IncomingCallScreenActivity" android:screenOrientation="portrait"
+        <activity android:name=".IncomingCallScreenActivity" android:screenOrientation="landscape"
             android:noHistory="true"/>
-        <activity android:name=".PlaceCallActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".PlaceCallActivity" android:screenOrientation="landscape"/>
 
     </application>
 

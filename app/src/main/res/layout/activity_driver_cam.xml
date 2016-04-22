@@ -72,7 +72,9 @@
                 android:padding="16dp"
                 android:gravity="center"
                 android:layout_weight="3"/>
+
         </LinearLayout>
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -98,6 +100,13 @@
             android:background="#FF9800"
             android:src="@drawable/drivercam"
             android:padding="0dp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/remoteVideo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
 
         <TextClock
             android:layout_width="wrap_content"

@@ -20,7 +20,6 @@ import com.sinch.android.rtc.video.VideoCallListener;
 import com.sinch.android.rtc.video.VideoController;
 
 import java.util.List;
-import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -75,9 +74,9 @@ public class CallScreenActivity extends BaseActivity {
 
         mAudioPlayer = new AudioPlayer(this);
         mCallDuration = (TextView) findViewById(R.id.callDuration);
-//        mCallerName = (TextView) findViewById(R.id.remoteUser);
-//        mCallState = (TextView) findViewById(R.id.callState);
-        Button endCallButton = (Button) findViewById(R.id.hangupButton);
+        mCallerName = (TextView) findViewById(R.id.remoteUser);
+        mCallState = (TextView) findViewById(R.id.callState);
+        Button endCallButton = (Button) findViewById(R.id.camButton);
 
         endCallButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -154,16 +153,16 @@ public class CallScreenActivity extends BaseActivity {
         finish();
     }
 
-    private String formatTimespan(long timespan) {
-        long totalSeconds = timespan / 1000;
-        long minutes = totalSeconds / 60;
-        long seconds = totalSeconds % 60;
-        return String.format(Locale.US, "%02d:%02d", minutes, seconds);
-    }
+//    private String formatTimespan(long timespan) {
+//        long totalSeconds = timespan / 1000;
+//        long minutes = totalSeconds / 60;
+//        long seconds = totalSeconds % 60;
+//        return String.format(Locale.US, "%02d:%02d", minutes, seconds);
+//    }
 
     private void updateCallDuration() {
         if (mCallStart > 0) {
-            mCallDuration.setText(formatTimespan(System.currentTimeMillis() - mCallStart));
+//            mCallDuration.setText(formatTimespan(System.currentTimeMillis() - mCallStart));
         }
     }
 
@@ -186,8 +185,8 @@ public class CallScreenActivity extends BaseActivity {
                 }
             });
             Toast.makeText(getApplicationContext(),"Video views being inflated",Toast.LENGTH_SHORT).show();
-            LinearLayout view = (LinearLayout) findViewById(R.id.remoteVideo);
-            view.addView(vc.getRemoteView());
+//            LinearLayout view = (LinearLayout) findViewById(R.id.remoteVideo);
+//            view.addView(vc.getRemoteView());
             mVideoViewsAdded = true;
         }
     }
@@ -204,8 +203,8 @@ public class CallScreenActivity extends BaseActivity {
             LinearLayout view = (LinearLayout) findViewById(R.id.remoteVideo);
             view.removeView(vc.getRemoteView());
 
-            RelativeLayout localView = (RelativeLayout) findViewById(R.id.localVideo);
-            localView.removeView(vc.getLocalView());
+//            RelativeLayout localView = (RelativeLayout) findViewById(R.id.localVideo);
+//            localView.removeView(vc.getLocalView());
             mVideoViewsAdded = false;
         }
     }
@@ -228,7 +227,7 @@ public class CallScreenActivity extends BaseActivity {
         public void onCallEstablished(Call call) {
             Log.d(TAG, "Call established");
             mAudioPlayer.stopProgressTone();
-            mCallState.setText(call.getState().toString());
+//            mCallState.setText(call.getState().toString());
             setVolumeControlStream(AudioManager.STREAM_VOICE_CALL);
             AudioController audioController = getSinchServiceInterface().getAudioController();
             audioController.enableSpeaker();
