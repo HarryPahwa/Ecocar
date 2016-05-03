@@ -70,11 +70,17 @@
 
         <requestFocus/>
     </EditText>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Waiting for team to call..."
+        android:layout_gravity="center_horizontal"
 
+        android:layout_below="@+id/linearLayout"/>
     <Button
             android:id="@+id/callButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
         android:layout_gravity="center_horizontal"
             android:minHeight="56dp"
             android:minWidth="132dp"

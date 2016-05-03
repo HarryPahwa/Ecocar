@@ -22,6 +22,7 @@ public class AudioPlayer {
 
     private AudioTrack mProgressTone;
 
+
     private final static int SAMPLE_RATE = 16000;
 
     public AudioPlayer(Context context) {
@@ -30,7 +31,7 @@ public class AudioPlayer {
 
     public void playRingtone() {
         AudioManager audioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
-
+        audioManager.setSpeakerphoneOn(false);
         // Honour silent mode
         switch (audioManager.getRingerMode()) {
             case AudioManager.RINGER_MODE_NORMAL:

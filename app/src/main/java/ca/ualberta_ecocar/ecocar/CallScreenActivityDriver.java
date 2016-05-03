@@ -1,6 +1,5 @@
 package ca.ualberta_ecocar.ecocar;
 
-import android.media.AudioManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,9 +23,9 @@ import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class CallScreenActivity extends BaseActivity {
+public class CallScreenActivityDriver extends BaseActivity {
 
-    static final String TAG = CallScreenActivity.class.getSimpleName();
+    static final String TAG = CallScreenActivityDriver.class.getSimpleName();
     static final String CALL_START_TIME = "callStartTime";
     static final String ADDED_LISTENER = "addedListener";
 
@@ -39,15 +38,15 @@ public class CallScreenActivity extends BaseActivity {
     private boolean mAddedListener = false;
     private boolean mVideoViewsAdded = false;
 
-    private TextView mCallDuration;
-//    private TextView mCallState;
+//    private TextView mCallDuration;
+    private TextView mCallState;
 //    private TextView mCallerName;
 
     private class UpdateCallDurationTask extends TimerTask {
 
         @Override
         public void run() {
-            CallScreenActivity.this.runOnUiThread(new Runnable() {
+            CallScreenActivityDriver.this.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     updateCallDuration();
@@ -71,12 +70,12 @@ public class CallScreenActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_driver_cam);
+        setContentView(R.layout.activity_call_driver_video);
 
         mAudioPlayer = new AudioPlayer(this);
-        mCallDuration = (TextView) findViewById(R.id.totalTime);
+//        mCallDuration = (TextView) findViewById(R.id.callDuration);
 //        mCallerName = (TextView) findViewById(R.id.remoteUser);
-//        mCallState = (TextView) findViewById(R.id.callState);
+        mCallState = (TextView) findViewById(R.id.callStatus);
         Button endCallButton = (Button) findViewById(R.id.backButton);
 
         endCallButton.setOnClickListener(new OnClickListener() {
@@ -116,7 +115,7 @@ public class CallScreenActivity extends BaseActivity {
         Call call = getSinchServiceInterface().getCall(mCallId);
         if (call != null) {
 //            mCallerName.setText(call.getRemoteUserId());
-//            mCallState.setText(call.getState().toString());
+            mCallState.setText(call.getState().toString());
             if (call.getState() == CallState.ESTABLISHED) {
                 addVideoViews();
             }
@@ -163,7 +162,7 @@ public class CallScreenActivity extends BaseActivity {
 
     private void updateCallDuration() {
         if (mCallStart > 0) {
-            mCallDuration.setText(formatTimespan(System.currentTimeMillis() - mCallStart));
+//            mCallDuration.setText(formatTimespan(System.currentTimeMillis() - mCallStart));
         }
     }
 
@@ -217,9 +216,9 @@ public class CallScreenActivity extends BaseActivity {
             CallEndCause cause = call.getDetails().getEndCause();
             Log.d(TAG, "Call ended. Reason: " + cause.toString());
             mAudioPlayer.stopProgressTone();
-            setVolumeControlStream(AudioManager.USE_DEFAULT_STREAM_TYPE);
+            //setVolumeControlStream(AudioManager.USE_DEFAULT_STREAM_TYPE);
             String endMsg = "Call ended: " + call.getDetails().toString();
-            Toast.makeText(CallScreenActivity.this, endMsg, Toast.LENGTH_LONG).show();
+            Toast.makeText(CallScreenActivityDriver.this, endMsg, Toast.LENGTH_LONG).show();
 
             endCall();
         }
@@ -228,8 +227,8 @@ public class CallScreenActivity extends BaseActivity {
         public void onCallEstablished(Call call) {
             Log.d(TAG, "Call established");
             mAudioPlayer.stopProgressTone();
-//            mCallState.setText(call.getState().toString());
-            setVolumeControlStream(AudioManager.STREAM_VOICE_CALL);
+            mCallState.setText(call.getState().toString());
+            //setVolumeControlStream(AudioManager.STREAM_VOICE_CALL);
             AudioController audioController = getSinchServiceInterface().getAudioController();
             audioController.enableSpeaker();
             mCallStart = System.currentTimeMillis();

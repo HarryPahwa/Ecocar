@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00695C">
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="0dip"
+            android:background="#00695C"
+            android:orientation="vertical">
+
+            <LinearLayout android:id="@+id/remoteVideo" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true" android:orientation="horizontal"/>
+
+            <RelativeLayout android:id="@+id/localVideo" android:layout_width="1dp"
+                android:layout_alignParentRight="true" android:layout_height="2dp"
+                android:layout_alignParentTop="true" />
+
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FF9800"
+            android:src="@drawable/driver_stock_pic"
+            android:padding="24dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textSize="20sp"
+            android:text="@string/back_button_string"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFFFF"
+            android:background="?android:attr/selectableItemBackground"
+            android:id="@+id/backButton"
+            android:onClick="backButtonClick"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:text="Driver"
+            android:padding="8dp"
+            android:textSize="64sp"/>
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textSize="20sp"
+            android:padding="8dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:orientation="horizontal"
+                >
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/team_stock_pic"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="2.1"
+                    android:background="@drawable/rounded"
+                    android:padding="24dp"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/callStatus"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="Awaiting contact from team..."
+                android:textSize="32sp"
+                android:padding="16dp"
+                android:gravity="center"
+                android:layout_weight="3"/>
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

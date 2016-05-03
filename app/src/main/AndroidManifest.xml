@@ -71,7 +71,7 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -81,6 +81,18 @@
         <activity android:name=".IncomingCallScreenActivity" android:screenOrientation="landscape"
             android:noHistory="true"/>
         <activity android:name=".PlaceCallActivity" android:screenOrientation="landscape"/>
+        <activity
+            android:name=".LoginActivityDriver"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".CallScreenActivityDriver"/>
+
+        <activity android:name=".PlaceCallActivityDriver" android:screenOrientation="landscape"/>
 
     </application>
 

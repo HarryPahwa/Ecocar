@@ -2,7 +2,6 @@ package ca.ualberta_ecocar.ecocar;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.media.AudioManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -73,14 +72,14 @@ public class DriverActivity extends Activity {
             //call ended by either party
             call=null;
             callStatus.setText("Call ended");
-            setVolumeControlStream(AudioManager.USE_DEFAULT_STREAM_TYPE);
+//            setVolumeControlStream(AudioManager.USE_DEFAULT_STREAM_TYPE);
 
         }
         @Override
         public void onCallEstablished(Call establishedCall) {
             //incoming call was picked up
             callStatus.setText("Connected to team");
-            setVolumeControlStream(AudioManager.STREAM_VOICE_CALL);
+//            setVolumeControlStream(AudioManager.STREAM_VOICE_CALL);
         }
         @Override
         public void onCallProgressing(Call progressingCall) {

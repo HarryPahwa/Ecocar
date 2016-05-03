@@ -34,6 +34,8 @@ public class IncomingCallScreenActivity extends BaseActivity {
         mAudioPlayer = new AudioPlayer(this);
         mAudioPlayer.playRingtone();
         mCallId = getIntent().getStringExtra(SinchService.CALL_ID);
+        mAudioPlayer.stopRingtone();
+
     }
 
     @Override
@@ -43,7 +45,7 @@ public class IncomingCallScreenActivity extends BaseActivity {
             call.addCallListener(new SinchCallListener());
             TextView remoteUser = (TextView) findViewById(R.id.remoteUser);
             remoteUser.setText(call.getRemoteUserId());
-
+            answerClicked();
         } else {
             Log.e(TAG, "Started with invalid callId, aborting");
             finish();
@@ -55,7 +57,7 @@ public class IncomingCallScreenActivity extends BaseActivity {
         Call call = getSinchServiceInterface().getCall(mCallId);
         if (call != null) {
             call.answer();
-            Intent intent = new Intent(this, CallScreenActivity.class);
+            Intent intent = new Intent(this, CallScreenActivityDriver.class);
             intent.putExtra(SinchService.CALL_ID, mCallId);
             startActivity(intent);
         } else {

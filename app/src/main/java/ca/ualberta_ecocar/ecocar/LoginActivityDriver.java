@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.sinch.android.rtc.SinchError;
 
-public class LoginActivity extends BaseActivity implements SinchService.StartFailedListener {
+public class LoginActivityDriver extends BaseActivity implements SinchService.StartFailedListener {
 
     private Button mLoginButton;
     private String mLoginName;
@@ -21,7 +21,7 @@ public class LoginActivity extends BaseActivity implements SinchService.StartFai
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videotrial);
 
-        mLoginName = "Ecocar-team";
+        mLoginName = "Ecocar-driver";
 
         mLoginButton = (Button) findViewById(R.id.loginButton);
         mLoginButton.setEnabled(false);
@@ -79,7 +79,7 @@ public class LoginActivity extends BaseActivity implements SinchService.StartFai
     }
 
     private void openPlaceCallActivity() {
-        Intent mainActivity = new Intent(this, PlaceCallActivity.class);
+        Intent mainActivity = new Intent(this, PlaceCallActivityDriver.class);
         startActivity(mainActivity);
     }
 

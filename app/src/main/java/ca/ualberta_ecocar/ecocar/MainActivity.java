@@ -9,15 +9,17 @@ import com.sinch.android.rtc.calling.Call;
 
 public class MainActivity extends Activity {
     private Call call;
-    private AudioPlayer mAudioPlayer;
+//    private AudioPlayer mAudioPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mAudioPlayer = new AudioPlayer(this);
-        mAudioPlayer.playTeamSong();
+//        mAudioPlayer = new AudioPlayer(this);
+//        mAudioPlayer.playTeamSong();
 
         setContentView(R.layout.activity_main);
+
+
 
 //        final Button button = (Button) findViewById(R.id.callButton);
 //        final TextView callState = (TextView) findViewById(R.id.callState);
@@ -118,25 +120,20 @@ public class MainActivity extends Activity {
 //    }
 
     public void driverActivityLaunch (View view){
-        mAudioPlayer.stopTeamSong();
-        Intent intent=new Intent(this,DriverActivity.class);
+//        mAudioPlayer.stopTeamSong();
+        Intent intent=new Intent(this,LoginActivityDriver.class);
         startActivity(intent);
     }
 
     public void teamActivityLaunch(View view){
-        mAudioPlayer.stopTeamSong();
-        Intent intent=new Intent(this,TeamActivity.class);
+//        mAudioPlayer.stopTeamSong();
+        Intent intent=new Intent(this,LoginActivity.class);
         startActivity(intent);
     }
 
     public void settingsActivityLaunch (View view){
-        mAudioPlayer.stopTeamSong();
+//        mAudioPlayer.stopTeamSong();
         Intent intent = new Intent ( this, SettingsActivity.class);
-        startActivity(intent);
-    }
-    public void videoActivityLaunch (View view){
-        mAudioPlayer.stopTeamSong();
-        Intent intent = new Intent (this, LoginActivity.class);
         startActivity(intent);
     }
 }

@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.sinch.android.rtc.calling.Call;
 
-public class PlaceCallActivity extends BaseActivity {
+public class PlaceCallActivityDriver extends BaseActivity {
 
     private Button mCallButton;
     private String mCallName;
@@ -18,9 +18,9 @@ public class PlaceCallActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.main_driver);
 
-        mCallName = "Ecocar-driver";
+        mCallName = "Na";
         mCallButton = (Button) findViewById(R.id.callButton);
         mCallButton.setEnabled(false);
         mCallButton.setOnClickListener(buttonClickListener);

@@ -21,100 +21,183 @@
             android:id="@+id/backButton"
             android:onClick="backButtonClick"
             />
-
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/driver_stock_pic"
+            android:background="@drawable/rounded"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:padding="16dp"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <View
+
+<View
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="0.7"></View>
+
+
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"/>
-
+                android:layout_weight="3.5">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="3"
-                android:orientation="horizontal"
-                >
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"/>
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/driver_stock_pic"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_weight="2.1"
-                    android:background="@drawable/rounded"
-                    android:padding="24dp"/>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"/>
-
-            </LinearLayout>
-
-
-            <Button
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:id="@+id/camButton"
-                android:text="Driver Camera                       0 : 42"
+                android:layout_height="match_parent"
+                android:text="Driver Camera"
                 android:textSize="32dp"
                 android:textAllCaps="false"
                 android:background="?android:attr/selectableItemBackground"
                 android:padding="16dp"
                 android:gravity="center"
-                android:layout_weight="3"/>
+                />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Driver Camera"
+                    android:textSize="32dp"
+                    android:textAllCaps="false"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Driver Camera"
+                    android:textSize="32dp"
+                    android:textAllCaps="false"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Driver Camera"
+                    android:textSize="32dp"
+                    android:textAllCaps="false"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Driver Camera"
+                    android:textSize="32dp"
+                    android:textAllCaps="false"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Driver Camera"
+                    android:textSize="32dp"
+                    android:textAllCaps="false"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Driver Camera"
+                    android:textSize="32dp"
+                    android:textAllCaps="false"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Driver Camera"
+                    android:textSize="32dp"
+                    android:textAllCaps="false"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Driver Camera"
+                    android:textSize="32dp"
+                    android:textAllCaps="false"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Driver Camera"
+                    android:textSize="32dp"
+                    android:textAllCaps="false"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Driver Camera"
+                    android:textSize="32dp"
+                    android:textAllCaps="false"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:gravity="center"/>
+
+
+            </LinearLayout>
+            </ScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/totalTime"
+                android:textSize="16dp"
+                android:textAllCaps="false"
+                android:background="?android:attr/selectableItemBackground"
+
+                android:gravity="center"
+                android:layout_weight="0.5"/>
 
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/flipcam"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:padding="8dp"
-            />
-    </RelativeLayout>
-
-
-
-    <RelativeLayout
-
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:background="#FF9800"
-            android:src="@drawable/drivercam"
-            android:padding="0dp"/>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:id="@+id/remoteVideo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
-
-        <TextClock
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:textSize="20sp"
-            android:padding="8dp"/>
 
     </RelativeLayout>
+
+
+
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:padding="0dip"
+            android:layout_weight="1"
+            android:background="#00695C"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FF9800"
+                android:src="@drawable/team_stock_pic"
+                android:padding="48dp"/>
+            <LinearLayout android:id="@+id/remoteVideo" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true" android:orientation="horizontal"/>
+
+            <RelativeLayout android:id="@+id/localVideo" android:layout_width="1dp"
+                android:layout_alignParentRight="true" android:layout_height="2dp"
+                android:layout_alignParentTop="true" />
+
+        </RelativeLayout>
+
 
 </LinearLayout>
