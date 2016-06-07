@@ -91,6 +91,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CallScreenActivityDriver"/>
+        <activity android:name=".StatsActivity"/>
 
         <activity android:name=".PlaceCallActivityDriver" android:screenOrientation="landscape"/>
 
