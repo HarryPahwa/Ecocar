@@ -32,7 +32,7 @@ public class StatsActivity extends Activity {
 
         FirebaseDatabase database=FirebaseDatabase.getInstance();
         DatabaseReference myRef=database.getReference("message/newText");
-
+        DatabaseReference emergencyStatus = database.getReference("EmergencyStatus");
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -46,6 +46,22 @@ public class StatsActivity extends Activity {
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
                 Log.w("Firebase", "Failed to read value.", error.toException());
+            }
+        });
+
+        emergencyStatus.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Integer value=dataSnapshot.getValue(Integer.class);
+                if (value==1){
+                    //Set screen to red and make emergency stuff happen
+                    Log.v("Firebase","Its an emergency yo");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
             }
         });
 
