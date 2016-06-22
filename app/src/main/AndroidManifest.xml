@@ -14,6 +14,8 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -92,6 +94,7 @@
         </activity>
         <activity android:name=".CallScreenActivityDriver"/>
         <activity android:name=".StatsActivity"/>
+        <activity android:name=".LocationActivity"/>
 
         <activity android:name=".PlaceCallActivityDriver" android:screenOrientation="landscape"/>
 

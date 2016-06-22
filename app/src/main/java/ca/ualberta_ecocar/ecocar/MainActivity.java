@@ -125,6 +125,12 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
+    public void LocationActivityLaunch (View view){
+//        mAudioPlayer.stopTeamSong();
+        Intent intent=new Intent(this,LocationActivity.class);
+        startActivity(intent);
+    }
+
     public void teamActivityLaunch(View view){
 //        mAudioPlayer.stopTeamSong();
         Intent intent=new Intent(this,LoginActivity.class);
@@ -133,7 +139,7 @@ public class MainActivity extends Activity {
 
     public void settingsActivityLaunch (View view){
 //        mAudioPlayer.stopTeamSong();
-        Intent intent = new Intent ( this, StatsActivity.class);
+        Intent intent = new Intent ( this, MenuActivity.class);
         startActivity(intent);
     }
 }

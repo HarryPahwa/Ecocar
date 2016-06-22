@@ -76,6 +76,7 @@
                 android:textColor="#D4E157"
                 android:padding="8dp"/>
             <TextView
+                android:id="@+id/countText"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
