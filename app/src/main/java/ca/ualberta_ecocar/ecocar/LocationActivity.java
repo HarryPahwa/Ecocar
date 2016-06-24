@@ -34,8 +34,7 @@ public class LocationActivity extends Activity {
         LocationListener locationListener = new LocationListener() {
             public void onLocationChanged(Location location) {
                 location.getLatitude();
-                Toast.makeText(getApplicationContext(), "Current speed:" + location.getSpeed(),
-                        Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Current speed:" + location.getSpeed(),Toast.LENGTH_SHORT).show();
                 speedText.setText("Current speed:" + location.getSpeed() +" m/s");
 
             }

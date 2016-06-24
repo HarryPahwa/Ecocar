@@ -26,5 +26,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.2.0'
     compile 'com.google.firebase:firebase-database:9.0.1'
     compile files('libs/sinch-android-rtc-3.9.3.2.jar')
+    compile 'com.jjoe64:graphview:4.0.1'
 }
 apply plugin: 'com.google.gms.google-services'

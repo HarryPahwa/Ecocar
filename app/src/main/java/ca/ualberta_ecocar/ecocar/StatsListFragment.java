@@ -110,8 +110,8 @@ public class StatsListFragment extends ListFragment {
                 row = inflater.inflate(layoutResourceId, parent, false);
 
                 holder = new WeatherHolder();
-                holder.imgIcon = (TextView) row.findViewById(R.id.fc_label);
-                holder.txtTitle = (TextView)row.findViewById(R.id.fc_value);
+                holder.txtLabel = (TextView) row.findViewById(R.id.fc_label);
+                holder.txtValue = (TextView)row.findViewById(R.id.fc_value);
 
                 row.setTag(holder);
             }
@@ -121,16 +121,16 @@ public class StatsListFragment extends ListFragment {
             }
 
             FuelCellData weather = data[position];
-            holder.txtTitle.setText(weather.value);
-            holder.imgIcon.setText(weather.label);
+            holder.txtValue.setText(weather.value);
+            holder.txtLabel.setText(weather.label);
 
             return row;
         }
 
         class WeatherHolder
         {
-            TextView imgIcon;
-            TextView txtTitle;
+            TextView txtLabel;
+            TextView txtValue;
         }
     }
 }

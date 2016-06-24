@@ -139,7 +139,7 @@ public class MainActivity extends Activity {
 
     public void settingsActivityLaunch (View view){
 //        mAudioPlayer.stopTeamSong();
-        Intent intent = new Intent ( this, MenuActivity.class);
+        Intent intent = new Intent ( this, PracticeStatsActivity.class);
         startActivity(intent);
     }
 }
