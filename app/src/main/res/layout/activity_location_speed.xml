@@ -5,11 +5,11 @@
     android:weightSum="1">
 
     <TextView
-        android:layout_width="140dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your speed will come here"
+        android:text="Alice's Speed"
         android:id="@+id/speedText"
-        android:layout_weight="0.12"
+        android:textSize="32sp"
         android:layout_gravity="center_horizontal"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />

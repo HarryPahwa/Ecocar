@@ -1,5 +1,9 @@
 package ca.ualberta_ecocar.ecocar;
 
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,6 +14,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.sinch.android.rtc.AudioController;
 import com.sinch.android.rtc.PushPair;
 import com.sinch.android.rtc.calling.Call;
@@ -18,6 +24,7 @@ import com.sinch.android.rtc.calling.CallState;
 import com.sinch.android.rtc.video.VideoCallListener;
 import com.sinch.android.rtc.video.VideoController;
 
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 import java.util.Timer;
@@ -41,6 +48,10 @@ public class CallScreenActivityDriver extends BaseActivity {
 //    private TextView mCallDuration;
     private TextView mCallState;
 //    private TextView mCallerName;
+
+
+    LocationManager locationManager;
+
 
     private class UpdateCallDurationTask extends TimerTask {
 
@@ -89,6 +100,44 @@ public class CallScreenActivityDriver extends BaseActivity {
         if (savedInstanceState == null) {
             mCallStart = System.currentTimeMillis();
         }
+
+
+
+
+        //SPEED LOCATION    -No Sinch Zone
+
+
+        final TextView speedText = (TextView) findViewById(R.id.speedText);
+        // Acquire a reference to the system Location Manager
+        locationManager = (LocationManager) this
+                .getSystemService(Context.LOCATION_SERVICE);
+
+        // Define a listener that responds to location updates
+        LocationListener locationListener = new LocationListener() {
+            public void onLocationChanged(Location location) {
+                location.getLatitude();
+                //Toast.makeText(getApplicationContext(), "Current speed:" + location.getSpeed(),Toast.LENGTH_SHORT).show();
+                speedText.setText(Float.toString(location.getSpeed()));
+                FirebaseDatabase database=FirebaseDatabase.getInstance();
+                DatabaseReference myRef=database.getReference("AliceSpeed");
+                myRef.child(java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime())).child("Speed").setValue(Float.toString(location.getSpeed()));
+
+            }
+
+            public void onStatusChanged(String provider, int status,
+                                        Bundle extras) {
+            }
+
+            public void onProviderEnabled(String provider) {
+
+            }
+
+            public void onProviderDisabled(String provider) {
+            }
+        };
+
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+
     }
 
     @Override
@@ -230,7 +279,7 @@ public class CallScreenActivityDriver extends BaseActivity {
             mCallState.setText(call.getState().toString());
             //setVolumeControlStream(AudioManager.STREAM_VOICE_CALL);
             AudioController audioController = getSinchServiceInterface().getAudioController();
-            audioController.enableSpeaker();
+            //audioController.enableSpeaker();
             mCallStart = System.currentTimeMillis();
             Log.d(TAG, "Call offered video: " + call.getDetails().isVideoOffered());
         }

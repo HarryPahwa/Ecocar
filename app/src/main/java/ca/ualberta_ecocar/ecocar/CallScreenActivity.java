@@ -231,7 +231,7 @@ public class CallScreenActivity extends BaseActivity {
 //            mCallState.setText(call.getState().toString());
             setVolumeControlStream(AudioManager.STREAM_VOICE_CALL);
             AudioController audioController = getSinchServiceInterface().getAudioController();
-            audioController.enableSpeaker();
+//            audioController.enableSpeaker();
             mCallStart = System.currentTimeMillis();
             Log.d(TAG, "Call offered video: " + call.getDetails().isVideoOffered());
         }

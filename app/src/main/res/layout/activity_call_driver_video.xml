@@ -49,6 +49,7 @@
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             android:text="Driver"
+            android:textColor="#FFFFFF"
             android:padding="8dp"
             android:textSize="64sp"/>
 
@@ -93,7 +94,7 @@
                     android:src="@drawable/team_stock_pic"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_weight="2.1"
+                    android:layout_weight="1.4"
                     android:background="@drawable/rounded"
                     android:padding="24dp"/>
 
@@ -103,17 +104,80 @@
                     android:layout_weight="1"/>
 
             </LinearLayout>
-
-
-            <TextView
-                android:id="@+id/callStatus"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:text="Awaiting contact from team..."
-                android:textSize="32sp"
-                android:padding="16dp"
-                android:gravity="center"
-                android:layout_weight="3"/>
+                android:layout_height="wrap_content"
+                android:background="#009688"
+                android:elevation="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                >
+                <TextView
+                    android:id="@+id/callStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Awaiting contact from team..."
+                    android:textColor="#FFFFFF"
+                    android:textSize="32sp"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#009688"
+                android:elevation="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Speed"
+                        android:textSize="24sp"
+                        android:padding="16dp"
+                        android:textColor="#FFFFFF"
+                        android:singleLine="true"/>
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/speedText"
+                        android:text="0"
+                        android:textAlignment="viewEnd"
+                        android:textSize="24sp"
+                        android:padding="16dp"
+                        android:textColor="#FFC107"
+                        android:singleLine="true"
+                        />
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="m/s"
+                        android:textSize="24sp"
+                        android:padding="16dp"
+                        android:textColor="#FFC107"
+                        android:layout_alignParentRight="true"
+                        />
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+
+
+
         </LinearLayout>
 
 
