@@ -94,7 +94,7 @@
                     android:src="@drawable/team_stock_pic"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_weight="1.4"
+                    android:layout_weight="1.8"
                     android:background="@drawable/rounded"
                     android:padding="24dp"/>
 
@@ -120,7 +120,7 @@
                     android:layout_height="wrap_content"
                     android:text="Awaiting contact from team..."
                     android:textColor="#FFFFFF"
-                    android:textSize="32sp"
+                    android:textSize="24sp"
                     android:padding="8dp"
                     android:gravity="center"/>
             </FrameLayout>

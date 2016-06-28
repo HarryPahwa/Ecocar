@@ -71,7 +71,7 @@ public class StatsListFragment extends ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id) {
 //        StatsListFragment graph = (StatsListFragment) getFragmentManager().findFragmentById(R.id.fragment);
 //        graph.change(valString[position],"Value : "+primaryVals[position]);
-        getListView().setSelector(android.R.color.holo_blue_dark);
+//**        getListView().setSelector(android.R.color.holo_blue_dark);
 //        getListView().setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,600));
     }
 
