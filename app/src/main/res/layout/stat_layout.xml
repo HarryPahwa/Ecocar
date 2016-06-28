@@ -15,15 +15,15 @@
            android:orientation="horizontal">
 
            <TextView
-            android:id="@+id/fc_label"
-            android:layout_width="0dp"
-               android:layout_weight="3"
-            android:layout_height="match_parent"
-            android:text="HELLO"
-            android:textSize="24sp"
-           android:padding="16dp"
-               android:textColor="#FFFFFF"
-               android:singleLine="true"/>
+                android:id="@+id/fc_label"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:layout_height="match_parent"
+                android:text="HELLO"
+                android:textSize="24sp"
+                android:padding="16dp"
+                android:textColor="#FFFFFF"
+                android:singleLine="true"/>
            <TextView
                android:layout_weight="1"
                android:layout_width="0dp"
@@ -34,6 +34,9 @@
                android:padding="16dp"
                android:textColor="#FFC107"
                />
+
         </LinearLayout>
+
+
     </FrameLayout>
 </LinearLayout>

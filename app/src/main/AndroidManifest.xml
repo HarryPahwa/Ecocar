@@ -24,8 +24,8 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
 
-        <activity android:name=".SplashActivity">
-            android:screenOrientation="landscape"
+        <activity android:name=".SplashActivity"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,50 +34,30 @@
         </activity>
 
 
-        <activity android:name=".MainActivity">
-            android:screenOrientation="landscape"
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".MainActivity"
+            android:screenOrientation="landscape">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
 
-        <activity android:name=".PracticeStatsActivity">
-            android:screenOrientation="landscape"
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".PracticeStatsActivity"
+            android:screenOrientation="landscape">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
-        <activity android:name=".DriverActivity">
-            android:screenOrientation="landscape"
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".DriverActivity"
+            android:screenOrientation="landscape">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
-        <activity android:name=".TeamActivity">
-            android:screenOrientation="landscape"
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".TeamActivity"
+            android:screenOrientation="landscape">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity android:name=".SettingsActivity">
             android:screenOrientation="landscape"
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <service android:name=".SinchService"></service>
@@ -85,10 +65,7 @@
             android:name=".LoginActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+
         </activity>
         <activity android:name=".CallScreenActivity"/>
         <activity android:name=".IncomingCallScreenActivity" android:screenOrientation="landscape"
@@ -98,10 +75,7 @@
             android:name=".LoginActivityDriver"
             android:label="@string/app_name"
             android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+
         </activity>
         <activity android:name=".CallScreenActivityDriver"/>
 

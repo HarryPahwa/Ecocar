@@ -1,7 +1,9 @@
 package ca.ualberta_ecocar.ecocar;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -55,7 +57,11 @@ public class PracticeStatsActivity extends Activity {
         });
     }
 
-
+    public void backButtonClick(View view){
+//        call=null;
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
 
 }

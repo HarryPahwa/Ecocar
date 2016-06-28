@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 /**
@@ -36,7 +37,7 @@ public class StatsListFragment extends ListFragment {
             "fc_purge_valve",
             "fc_h2_valve",
     };
-    String[] primaryVals = new String[]{"0","0","1","0","0","0","0","62","0","0","0","0","0","0","0","0","0","0","0","0","0"};
+    String[] primaryVals = new String[]{"9","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"};
 
     public class FuelCellData {
         String label;
@@ -51,14 +52,14 @@ public class StatsListFragment extends ListFragment {
     }
 
     FuelCellData[] ourData = new FuelCellData[primaryVals.length];
-    WeatherAdapter adapter;
+    DataAdapter adapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.list_fragment, container, false);
         fillDataIntoClass(valString, primaryVals);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getActivity(),
-                R.layout.stat_layout, R.id.fc_label, valString);
-        adapter = new WeatherAdapter(getActivity(), R.layout.stat_layout, ourData);
+//        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getActivity(),
+//                R.layout.stat_layout, R.id.fc_label, valString);
+        adapter = new DataAdapter(getActivity(), R.layout.stat_layout, ourData);
 
         setListAdapter(adapter);
         adapter.notifyDataSetChanged();
@@ -66,16 +67,22 @@ public class StatsListFragment extends ListFragment {
         return view;
 
     }
-//    @Override
-//    public void onListItemClick(ListView l, View v, int position, long id) {
-//        TextFragment txt = (TextFragment)getFragmentManager().findFragmentById(R.id.fragment2);
-//        txt.change(AndroidOS[position],"Version : "+Version[position]);
-//        getListView().setSelector(android.R.color.holo_blue_dark);
-//    }
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+//        StatsListFragment graph = (StatsListFragment) getFragmentManager().findFragmentById(R.id.fragment);
+//        graph.change(valString[position],"Value : "+primaryVals[position]);
+        getListView().setSelector(android.R.color.holo_blue_dark);
+//        getListView().setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,600));
+    }
 
     public void fillDataIntoClass(String[] valString, String[] primaryVals){
-        for( int i=0; i<primaryVals.length;i++){
+        for( int i=0; i<ourData.length;i++){
+            if(i>=primaryVals.length){
+                break;
+            }
+
             ourData[i]=new FuelCellData(valString[i],primaryVals[i]);
+
         }
     }
     public void change(String[] data)
@@ -83,16 +90,15 @@ public class StatsListFragment extends ListFragment {
         primaryVals=data;
         fillDataIntoClass(valString,primaryVals);
         adapter.notifyDataSetChanged();
-
     }
 
-    public class WeatherAdapter extends ArrayAdapter<FuelCellData>{
+    public class DataAdapter extends ArrayAdapter<FuelCellData>{
 
         Context context;
         int layoutResourceId;
         FuelCellData data[] = null;
 
-        public WeatherAdapter(Context context, int layoutResourceId, FuelCellData[] data) {
+        public DataAdapter(Context context, int layoutResourceId, FuelCellData[] data) {
             super(context, layoutResourceId, data);
             this.layoutResourceId = layoutResourceId;
             this.context = context;
@@ -102,14 +108,14 @@ public class StatsListFragment extends ListFragment {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View row = convertView;
-            WeatherHolder holder = null;
+            DataHolder holder = null;
 
             if(row == null)
             {
                 LayoutInflater inflater = ((Activity)context).getLayoutInflater();
                 row = inflater.inflate(layoutResourceId, parent, false);
 
-                holder = new WeatherHolder();
+                holder = new DataHolder();
                 holder.txtLabel = (TextView) row.findViewById(R.id.fc_label);
                 holder.txtValue = (TextView)row.findViewById(R.id.fc_value);
 
@@ -117,17 +123,17 @@ public class StatsListFragment extends ListFragment {
             }
             else
             {
-                holder = (WeatherHolder)row.getTag();
+                holder = (DataHolder)row.getTag();
             }
 
-            FuelCellData weather = data[position];
-            holder.txtValue.setText(weather.value);
-            holder.txtLabel.setText(weather.label);
+            FuelCellData fcData = data[position];
+            holder.txtValue.setText(fcData.value);
+            holder.txtLabel.setText(fcData.label);
 
             return row;
         }
 
-        class WeatherHolder
+        class DataHolder
         {
             TextView txtLabel;
             TextView txtValue;

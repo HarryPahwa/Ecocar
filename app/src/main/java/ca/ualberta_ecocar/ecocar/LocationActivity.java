@@ -7,7 +7,6 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by Harry on 13-Jun-16.
@@ -50,11 +49,9 @@ public class LocationActivity extends Activity {
             public void onProviderDisabled(String provider) {
             }
         };
-        try {
+
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
-        } catch (Exception e){
-            Toast.makeText(getApplicationContext(),"ERROR",Toast.LENGTH_SHORT).show();
-        }
+
     }
 
 }
