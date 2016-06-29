@@ -34,7 +34,7 @@ public class LocationActivity extends Activity {
             public void onLocationChanged(Location location) {
                 location.getLatitude();
                 //Toast.makeText(getApplicationContext(), "Current speed:" + location.getSpeed(),Toast.LENGTH_SHORT).show();
-                speedText.setText("Current speed:" + location.getSpeed() +" m/s");
+                speedText.setText("Current speed:" + Math.round(location.getSpeed()*3.6 * 100.0) / 100.0 +" km/hr");
 
             }
 

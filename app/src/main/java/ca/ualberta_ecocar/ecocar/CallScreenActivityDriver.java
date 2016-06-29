@@ -51,7 +51,7 @@ public class CallScreenActivityDriver extends BaseActivity {
 
 
     LocationManager locationManager;
-
+    LocationListener locationListener;
 
     private class UpdateCallDurationTask extends TimerTask {
 
@@ -112,15 +112,18 @@ public class CallScreenActivityDriver extends BaseActivity {
         locationManager = (LocationManager) this
                 .getSystemService(Context.LOCATION_SERVICE);
 
+        FirebaseDatabase database=FirebaseDatabase.getInstance();
+        final DatabaseReference myRef=database.getReference("AliceSpeed");
+
         // Define a listener that responds to location updates
-        LocationListener locationListener = new LocationListener() {
+        locationListener = new LocationListener() {
             public void onLocationChanged(Location location) {
                 location.getLatitude();
+                String speed = Double.toString(Math.round(location.getSpeed()*3.6 * 100.0) / 100.0);
                 //Toast.makeText(getApplicationContext(), "Current speed:" + location.getSpeed(),Toast.LENGTH_SHORT).show();
-                speedText.setText(Float.toString(location.getSpeed()));
-                FirebaseDatabase database=FirebaseDatabase.getInstance();
-                DatabaseReference myRef=database.getReference("AliceSpeed");
-                myRef.child(java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime())).child("Speed").setValue(Float.toString(location.getSpeed()));
+                speedText.setText(speed);
+
+                myRef.child(java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime())).child("Speed").setValue(speed);
 
             }
 
@@ -177,6 +180,7 @@ public class CallScreenActivityDriver extends BaseActivity {
         mDurationTask.cancel();
         mTimer.cancel();
         removeVideoViews();
+        locationManager.removeUpdates(locationListener);
     }
 
     @Override

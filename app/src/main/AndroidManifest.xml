@@ -55,8 +55,8 @@
 
         </activity>
 
-        <activity android:name=".SettingsActivity">
-            android:screenOrientation="landscape"
+        <activity android:name=".SettingsActivity"
+            android:screenOrientation="landscape">
 
         </activity>
 
@@ -67,7 +67,8 @@
             android:screenOrientation="landscape">
 
         </activity>
-        <activity android:name=".CallScreenActivity"/>
+        <activity android:name=".CallScreenActivity"
+            android:screenOrientation="landscape"/>
         <activity android:name=".IncomingCallScreenActivity" android:screenOrientation="landscape"
             android:noHistory="true"/>
         <activity android:name=".PlaceCallActivity" android:screenOrientation="landscape"/>
@@ -77,10 +78,13 @@
             android:screenOrientation="landscape">
 
         </activity>
-        <activity android:name=".CallScreenActivityDriver"/>
+        <activity android:name=".CallScreenActivityDriver"
+            android:screenOrientation="landscape"/>
 
-        <activity android:name=".StatsActivity"/>
-        <activity android:name=".LocationActivity"/>
+        <activity android:name=".StatsActivity"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".LocationActivity"
+            android:screenOrientation="landscape"/>
 
         <activity android:name=".PlaceCallActivityDriver" android:screenOrientation="landscape"/>
 
